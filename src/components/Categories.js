@@ -2,9 +2,9 @@ import React from 'react';
 
 const Categories = () => {
     return (
-        <div>
-            Categories will be displayed here
-        </div>
+        <button>
+            Check status
+        </button>
     )
 }
 
