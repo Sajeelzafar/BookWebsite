@@ -1,34 +1,32 @@
 import React from 'react';
+import { FaTrash } from 'react-icons/fa';
 import Book from './Book';
-import { FaTrash } from "react-icons/fa"
 import Form from './Form';
 
 const Books = () => {
-    let bookinfo = [
-        {
-            id: 1,
-            title: "First Book",
-            author: "Random",
-        }
-    ]
-    return (
-        <div>
-            List of Books will be displayed here:
-            
-            {
-            bookinfo.map((element) => {
-                return(
-                    
-                    <li key={element.id}>
-                    <Book title={element.title} author={element.author} />
-                    <FaTrash />
-                    </li>
-                )    
-            })
-        }
-        <Form />
-        </div>
-    )
-}
+  const bookinfo = [
+    {
+      id: 1,
+      title: 'First Book',
+      author: 'Random',
+    },
+  ];
+  return (
+    <div>
+      List of Books will be displayed here:
 
-export default Books
+      {
+            bookinfo.map((element) => (
+
+              <li key={element.id}>
+                <Book title={element.title} author={element.author} />
+                <FaTrash />
+              </li>
+            ))
+        }
+      <Form />
+    </div>
+  );
+};
+
+export default Books;
