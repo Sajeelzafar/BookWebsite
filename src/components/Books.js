@@ -1,6 +1,7 @@
 import React from 'react';
 import Book from './Book';
 import { FaTrash } from "react-icons/fa"
+import Form from './Form';
 
 const Books = () => {
     let bookinfo = [
@@ -25,6 +26,7 @@ const Books = () => {
                 )    
             })
         }
+        <Form />
         </div>
     )
 }
