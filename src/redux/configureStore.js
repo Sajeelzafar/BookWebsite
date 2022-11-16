@@ -7,4 +7,6 @@ const rootReducer = combineReducers({
   statusHandler,
 });
 
-createStore(rootReducer);
+const store = createStore(rootReducer);
+
+export default store;
