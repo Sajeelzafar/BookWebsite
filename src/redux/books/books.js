@@ -1,9 +1,19 @@
 export const addBook = () => {
-    return  { type: "ADDING_BOOK" };
+    return  { 
+        type: "ADDING_BOOK",
+        id: null,
+        title: null,
+        author: null
+    };
 }
 
 export const delBook = () => {
-    return  { type: "REMOVING_BOOK" };
+    return  { 
+        type: "REMOVING_BOOK", 
+        id: null,
+        title: null,
+        author: null
+    };
 }
 
 export default bookHandler = (state = [], action) => {
