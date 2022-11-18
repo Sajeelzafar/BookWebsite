@@ -1,16 +1,17 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
 
 let booktitle = '';
-let author = '';
+let bookauthor = '';
 
 const handleChange = (event) => {
   if (event.target.className === 'titleBook') {
     booktitle = event.target.value;
   }
   if (event.target.className === 'nameAuthor') {
-    author = event.target.value;
+    bookauthor = event.target.value;
   }
 };
 
@@ -26,7 +27,20 @@ const Form = () => {
         <input className="nameAuthor" type="text" placeholder="Author Name" onChange={handleChange} />
       </div>
       <div>
-        <button type="button" onClick={() => dispatch(addBook(booktitle, author))}>ADD BOOK</button>
+        <button
+          type="button"
+          onClick={() => {
+            const obj = {
+              item_id: uuidv4(),
+              title: booktitle,
+              author: bookauthor,
+              category: 'Default',
+            };
+            dispatch(addBook(obj));
+          }}
+        >
+          ADD BOOK
+        </button>
       </div>
     </form>
   );

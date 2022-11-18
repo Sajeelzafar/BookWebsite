@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
-import { delBook } from '../redux/books/books';
+import { delBook, fetchBook } from '../redux/books/books';
 import Book from './Book';
 import Form from './Form';
 
 const Books = () => {
   const book = useSelector((initialState) => initialState.bookHandler);
   const dispatch = useDispatch();
-
+  useEffect(() => {
+    dispatch(fetchBook());
+  }, []);
   return (
     <div>
       List of Books will be displayed here:
