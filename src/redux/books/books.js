@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export const initialState = [
   {
     id: 1,
@@ -6,11 +8,11 @@ export const initialState = [
   },
 ];
 
-export const addBook = () => ({
+export const addBook = (booktitle, bookauthor) => ({
   type: 'ADDING_BOOK',
-  id: 2,
-  title: 'second book',
-  author: 'random author',
+  id: uuidv4(),
+  title: booktitle,
+  author: bookauthor,
 });
 
 export const delBook = () => ({
@@ -25,7 +27,7 @@ const bookHandler = (state = initialState, action) => {
         {
           id: action.id,
           title: action.title,
-          author: action.text,
+          author: action.author,
         }];
 
     case 'REMOVING_BOOK': {
