@@ -1,6 +1,4 @@
-/*eslint-disable */
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
 
 const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
 const appId = 'a0EBuQKzzPLsbomuWCDX';
@@ -12,28 +10,28 @@ export const initialState = [
   },
 ];
 
-export const addBook = createAsyncThunk (
+export const fetchBook = createAsyncThunk(
+  'FETCH',
+  async () => {
+    const response = await (fetch(`${url}/apps/${appId}/books`)).then((res) => res.json());
+    return response;
+  },
+);
+
+export const addBook = createAsyncThunk(
   'ADDING_BOOK',
-  async(obj, thunkAPI) => {
+  async (obj, thunkAPI) => {
     const task = await fetch(`${url}/apps/${appId}/books`,
       {
         method: 'POST',
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
-        body: JSON.stringify( obj ),
+        body: JSON.stringify(obj),
       }).then((resp) => resp.text());
-      thunkAPI.dispatch(fetchBook());
-      return task;
-  }
-)
-
-export const fetchBook = createAsyncThunk(
-  'FETCH',
-  async () => {
-    const response = await (fetch(`${url}/apps/${appId}/books`)).then(res => res.json());
-    return response;
-  }
+    thunkAPI.dispatch(fetchBook());
+    return task;
+  },
 );
 
 export const delBook = createAsyncThunk(
@@ -41,10 +39,10 @@ export const delBook = createAsyncThunk(
   async (itemID, thunkAPI) => {
     await fetch(`${url}/apps/${appId}/books/${itemID}`, {
       method: 'DELETE',
-    }).then(res => res.text())
+    }).then((res) => res.text());
     thunkAPI.dispatch(fetchBook());
-  }
-)
+  },
+);
 
 const bookHandler = (state = initialState, action) => {
   switch (action.type) {
@@ -59,7 +57,7 @@ const bookHandler = (state = initialState, action) => {
     case 'REMOVING_BOOK': {
       return state.filter((element) => (element.id !== action.id));
     }
-    
+
     case 'FETCH/fulfilled': {
       const newBookList = [];
       Object.entries(action.payload).forEach((item) => {
