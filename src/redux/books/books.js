@@ -15,9 +15,9 @@ export const addBook = (booktitle, bookauthor) => ({
   author: bookauthor,
 });
 
-export const delBook = () => ({
+export const delBook = (delId) => ({
   type: 'REMOVING_BOOK',
-  id: 1,
+  id: delId,
 });
 
 const bookHandler = (state = initialState, action) => {
