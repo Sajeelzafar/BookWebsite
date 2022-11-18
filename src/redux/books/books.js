@@ -1,25 +1,33 @@
-export const addBook = () => ({
+import { v4 as uuidv4 } from 'uuid';
+
+export const initialState = [
+  {
+    id: 1,
+    title: 'First Book',
+    author: 'Random',
+  },
+];
+
+export const addBook = (booktitle, bookauthor) => ({
   type: 'ADDING_BOOK',
-  id: null,
-  title: null,
-  author: null,
+  id: uuidv4(),
+  title: booktitle,
+  author: bookauthor,
 });
 
-export const delBook = () => ({
+export const delBook = (delId) => ({
   type: 'REMOVING_BOOK',
-  id: null,
-  title: null,
-  author: null,
+  id: delId,
 });
 
-const bookHandler = (state = [], action) => {
+const bookHandler = (state = initialState, action) => {
   switch (action.type) {
     case 'ADDING_BOOK':
       return [...state,
         {
           id: action.id,
           title: action.title,
-          author: action.text,
+          author: action.author,
         }];
 
     case 'REMOVING_BOOK': {
