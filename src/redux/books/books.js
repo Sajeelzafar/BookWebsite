@@ -1,18 +1,24 @@
+export const initialState = [
+  {
+    id: 1,
+    title: 'First Book',
+    author: 'Random',
+  },
+];
+
 export const addBook = () => ({
   type: 'ADDING_BOOK',
-  id: null,
-  title: null,
-  author: null,
+  id: 2,
+  title: 'second book',
+  author: 'random author',
 });
 
 export const delBook = () => ({
   type: 'REMOVING_BOOK',
-  id: null,
-  title: null,
-  author: null,
+  id: 1,
 });
 
-const bookHandler = (state = [], action) => {
+const bookHandler = (state = initialState, action) => {
   switch (action.type) {
     case 'ADDING_BOOK':
       return [...state,
