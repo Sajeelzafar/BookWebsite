@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
 
-let booktitle = '';
-let bookauthor = '';
+let booktitle;
+let bookauthor;
 
 const handleChange = (event) => {
   if (event.target.className === 'titleBook') {
@@ -18,16 +18,17 @@ const handleChange = (event) => {
 const Form = () => {
   const dispatch = useDispatch();
   return (
-    <form>
-      <div>
-        <h1>ADD NEW BOOK</h1>
+    <form className="form">
+      <div className="formHeadingContainer">
+        <h1 className="formHeading">ADD NEW BOOK</h1>
       </div>
-      <div>
-        <input className="titleBook" type="text" placeholder="Book Title" onChange={handleChange} />
-        <input className="nameAuthor" type="text" placeholder="Author Name" onChange={handleChange} />
-      </div>
-      <div>
+
+      <div className="formInputContainer">
+        <input className="titleBook" type="text" placeholder="Book Title" value={booktitle} onChange={handleChange} />
+        <input className="nameAuthor" type="text" placeholder="Author Name" value={bookauthor} onChange={handleChange} />
+
         <button
+          className="addBookButton"
           type="button"
           onClick={() => {
             const obj = {
@@ -36,6 +37,8 @@ const Form = () => {
               author: bookauthor,
               category: 'Default',
             };
+            booktitle = '';
+            bookauthor = '';
             dispatch(addBook(obj));
           }}
         >
