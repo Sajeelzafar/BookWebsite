@@ -1,1 +1,69 @@
-/* Yet to style */
+:root {
+    --azure: #0290ff;
+    --black-two: #121212;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    align-items: center;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.navLeftSide {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+}
+
+.navBarHeading {
+    font-family: Montserrat;
+    font-size: 1.875rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--azure);
+    text-decoration: none;
+}
+
+.navBarLinks {
+    list-style-type: none;
+    display: flex;
+    gap: 4rem;
+}
+
+.navBarItem {
+    font-family: Montserrat;
+    font-size: 0.813rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.9px;
+    color: var(--black-two);
+    text-decoration: none;
+}
+
+.Oval {
+    width: 2.813rem;
+    height: 2.813rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #e8e8e8;
+    cursor: pointer;
+  }
+
+.userIcon {
+    font-size: 2rem;
+    color: var(--azure);
+}
