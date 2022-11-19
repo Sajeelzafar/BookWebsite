@@ -5,6 +5,7 @@
   --azure: #0290ff;
   --black-two: #121212;
   --pale-grey: #f5f6fa;
+  --medium-blue: #307bbe;
 }
 
 * {
@@ -89,17 +90,59 @@ body {
   background-color: #fff;
 }
 
+.leftColumnComplete {
+  display: flex;
+  border-right: 1px solid #e8e8e8;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftColumnIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftColumnIcon {
+  padding-right: 1.5rem;
+}
+
+.leftColumnPercent {
+  height: 2.438rem;
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-family: Montserrat, sans-serif;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+}
+
+.leftColumnPercentText {
+  height: 1.125rem;
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+}
+
 .leftColumn {
   display: flex;
-  padding-top: 2rem;
-  padding-left: 1.75rem;
+  padding-top: 1rem;
   flex-direction: column;
-  border-right: 1px solid #e8e8e8;
 }
 
 .categoryHeading {
   height: 1.125rem;
-  margin: 0 2.438rem 0 0;
+  margin: 0 2.438rem 0.25rem 0;
   opacity: 0.5;
   font-family: Montserrat, sans-serif;
   font-size: 0.875rem;
@@ -126,7 +169,7 @@ body {
 
 .bookAuthor {
   height: 1.188rem;
-  margin: 0.25rem 0 0;
+  margin: 0.25rem 0 1.75rem;
   font-family: RobotoSlab, sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
@@ -181,6 +224,19 @@ body {
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
+  color: var(--black-two);
+}
+
+.rightColumnText {
+  height: 1.313rem;
+  margin: 0.438rem 8.113rem 1.15rem 3.688rem;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
   color: var(--black-two);
 }
 
