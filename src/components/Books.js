@@ -13,16 +13,28 @@ const Books = () => {
   }, []);
   return (
     <div>
-      List of Books will be displayed here:
-
       {
-            book.map((element) => (
+      book.map((element) => (
+        <section key={element.id} className="Booksection">
 
-              <li key={element.id}>
-                <Book title={element.title} author={element.author} />
+          <div className="leftColumn">
+            <span className="categoryHeading"> Category </span>
+            <Book title={element.title} author={element.author} />
+            <ul className="bookOptions">
+              <li className="bookOptionItems"> Comments </li>
+              <li className="bookOptionItems">
                 <FaTrash onClick={() => dispatch(delBook(element.id))} />
               </li>
-            ))
+              <li className="bookOptionItems"> Edit </li>
+            </ul>
+          </div>
+
+          <div className="rightColumn">
+            <span className="rightColumnHeading">CURRENT CHAPTER</span>
+            <button className="rightColumnButton" type="button">UPDATE PROGRESS</button>
+          </div>
+        </section>
+      ))
         }
       <Form />
     </div>

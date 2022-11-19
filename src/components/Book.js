@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 
 const Book = ({ title, author }) => (
   <div>
-    <h1>
-      Title of the book is
+    <h2 className="bookTitle">
       {title}
-    </h1>
-    <h2>
-      Author of the book is
-      {author}
     </h2>
+    <h3 className="bookAuthor">
+      {author}
+    </h3>
   </div>
 );
 
