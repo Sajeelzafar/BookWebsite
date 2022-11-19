@@ -62,16 +62,11 @@ body {
   letter-spacing: 1.9px;
   color: var(--black-two);
   text-decoration: none;
+  opacity: 1;
 }
 
-.Oval {
-  width: 2.813rem;
-  height: 2.813rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: solid 1px #e8e8e8;
-  cursor: pointer;
+.navBarItem:hover {
+  opacity: 0.5;
 }
 
 .userIcon {
