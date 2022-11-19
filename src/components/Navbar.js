@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="navBar">
       <div className="navLeftSide">
         <h1>
-          <Link className="navBarHeading" to="/"> Bookstore CMS</Link>
+          <Link className="navBarHeading" to="/books"> Bookstore CMS</Link>
         </h1>
         <ul className="navBarLinks">
           {links.map((link) => (
