@@ -18,16 +18,17 @@ const handleChange = (event) => {
 const Form = () => {
   const dispatch = useDispatch();
   return (
-    <form>
-      <div>
-        <h1>ADD NEW BOOK</h1>
+    <form className="form">
+      <div className="formHeadingContainer">
+        <h1 className="formHeading">ADD NEW BOOK</h1>
       </div>
-      <div>
+
+      <div className="formInputContainer">
         <input className="titleBook" type="text" placeholder="Book Title" onChange={handleChange} />
         <input className="nameAuthor" type="text" placeholder="Author Name" onChange={handleChange} />
-      </div>
-      <div>
+
         <button
+          className="addBookButton"
           type="button"
           onClick={() => {
             const obj = {
